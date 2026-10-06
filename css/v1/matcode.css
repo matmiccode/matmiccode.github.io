@@ -1,0 +1,193 @@
+/* MATCODE — wspólna rama stron programów. Wersja 1.
+   Strona programu dokłada własne zmienne (--accent, --pioro-*) i treść.
+   Zmiana tutaj odświeża wszystkie strony; nowa wersja ramy = nowy katalog
+   (css/v2/), stare strony zostają przy swojej. */
+
+:root {
+  --bg: #15171c;
+  --surface: #1d2026;
+  --surface-2: #262a32;
+  --line: #2c3039;
+  --line-strong: #3a414d;
+  --text: #e8eaee;
+  --muted: #959dab;
+  --faint: #6b7280;
+  --accent: #3b82e0;
+  --accent-strong: #2f74d0;
+  --accent-ink: #ffffff;
+  --accent-soft: #233a5e;
+  --ok: #4fb47a;
+  --radius: 10px;
+  --radius-sm: 6px;
+  --font: "Bricolage Grotesque", system-ui, "Segoe UI", sans-serif;
+  --wrap: 1080px;
+  --gutter: 24px;
+  color-scheme: dark;
+}
+
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) {
+    --bg: #f4f5f8;
+    --surface: #ffffff;
+    --surface-2: #eceef3;
+    --line: #dde1e8;
+    --line-strong: #c7ccd6;
+    --text: #15171c;
+    --muted: #5b6472;
+    --faint: #8a93a1;
+    --accent: #2563c7;
+    --accent-strong: #1f55ad;
+    --accent-soft: #dde8fb;
+    --ok: #2f8f5b;
+    color-scheme: light;
+  }
+}
+
+:root[data-theme="light"] {
+  --bg: #f4f5f8;
+  --surface: #ffffff;
+  --surface-2: #eceef3;
+  --line: #dde1e8;
+  --line-strong: #c7ccd6;
+  --text: #15171c;
+  --muted: #5b6472;
+  --faint: #8a93a1;
+  --accent: #2563c7;
+  --accent-strong: #1f55ad;
+  --accent-soft: #dde8fb;
+  --ok: #2f8f5b;
+  color-scheme: light;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 400 17px/1.55 var(--font);
+  font-optical-sizing: auto;
+}
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+img { max-width: 100%; height: auto; display: block; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+.wrap { max-width: var(--wrap); margin: 0 auto; padding: 0 var(--gutter); }
+
+h1, h2, h3 { margin: 0; font-weight: 600; letter-spacing: -0.02em; line-height: 1.1; text-wrap: balance; }
+h1 { font-size: clamp(2.4rem, 5.6vw, 4.1rem); }
+h2 { font-size: clamp(1.6rem, 3vw, 2.2rem); letter-spacing: -0.015em; }
+h3 { font-size: 1.15rem; letter-spacing: 0; line-height: 1.3; }
+p { margin: 0 0 1em; }
+.muted { color: var(--muted); }
+.small { font-size: 0.9rem; }
+.odstep { margin-top: 28px; }
+.odstep-duzy { margin-top: 36px; }
+
+/* Nagłówek strony */
+.top { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 22px 0; }
+.marka { display: flex; align-items: center; gap: 12px; color: var(--text); font-weight: 600; font-size: 1.15rem; letter-spacing: -0.01em; }
+.marka:hover { text-decoration: none; }
+.marka img { width: 36px; height: 36px; }
+.top nav { display: flex; gap: 22px; align-items: center; font-size: 0.95rem; }
+.top nav a { color: var(--muted); }
+.top nav a:hover { color: var(--text); text-decoration: none; }
+
+/* Przyciski */
+.btn {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 13px 22px; border-radius: var(--radius-sm);
+  font-weight: 600; font-size: 1rem; line-height: 1;
+  border: 1px solid transparent; cursor: pointer; white-space: nowrap;
+}
+.btn:hover { text-decoration: none; }
+.btn-primary { background: var(--accent-strong); color: var(--accent-ink); }
+.btn-primary:hover { background: var(--accent); }
+.btn-quiet { background: transparent; color: var(--text); border-color: var(--line-strong); }
+.btn-quiet:hover { background: var(--surface); }
+.btn-sm { padding: 9px 14px; font-size: 0.92rem; }
+.top nav .btn-primary { color: var(--accent-ink); }
+.top nav .btn-primary:hover { color: var(--accent-ink); }
+.cta { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+
+/* Sekcje */
+section { padding: 56px 0; }
+main > section + section { border-top: 1px solid var(--line); }
+.sekcja-naglowek { max-width: 38rem; margin-bottom: 28px; }
+.sekcja-naglowek p { color: var(--muted); margin: 10px 0 0; }
+
+/* Kroki — tylko dla treści, która naprawdę jest kolejnością */
+.kroki { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; counter-reset: krok; list-style: none; margin: 0; padding: 0; }
+.kroki li { counter-increment: krok; }
+.kroki li::before {
+  content: counter(krok);
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 30px; height: 30px; border-radius: 50%;
+  background: var(--accent-soft); color: var(--accent);
+  font-weight: 600; font-size: 0.95rem; margin-bottom: 12px;
+}
+.kroki h3 { margin-bottom: 6px; }
+.kroki p { color: var(--muted); margin: 0; }
+
+/* Lista cech: nazwa i zdanie, bez kafelków */
+.cechy { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px 40px; margin: 0; }
+.cechy > div { padding-bottom: 18px; border-bottom: 1px solid var(--line); }
+.cechy dt { font-weight: 600; margin-bottom: 4px; }
+.cechy dd { margin: 0; color: var(--muted); }
+
+/* Zrzut ekranu */
+figure { margin: 0; }
+figure img { border: 1px solid var(--line); border-radius: var(--radius); }
+figcaption { color: var(--faint); font-size: 0.9rem; margin-top: 12px; }
+
+/* Tabela wymagań */
+table { border-collapse: collapse; width: 100%; max-width: 40rem; }
+th, td { text-align: left; padding: 10px 0; border-bottom: 1px solid var(--line); vertical-align: top; }
+th { font-weight: 600; width: 38%; padding-right: 16px; }
+td { color: var(--muted); }
+
+/* Ramka z uwagą */
+.uwaga { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 18px 20px; max-width: 40rem; }
+.uwaga p:last-child { margin: 0; }
+
+/* Lista programów (strona główna) */
+.programy { list-style: none; margin: 0; padding: 0; display: grid; gap: 20px; }
+.program {
+  display: grid; grid-template-columns: 96px 1fr auto; gap: 24px; align-items: center;
+  padding: 24px; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
+}
+.program img { width: 96px; height: 96px; }
+.program h3 { font-size: 1.35rem; margin-bottom: 4px; }
+.program p { margin: 0; color: var(--muted); }
+.program .meta { color: var(--faint); font-size: 0.9rem; margin-top: 8px; }
+.program .akcje { display: flex; gap: 10px; flex-wrap: wrap; }
+
+/* Stopka */
+footer { border-top: 1px solid var(--line); padding: 32px 0 48px; color: var(--muted); font-size: 0.92rem; }
+footer .wrap { display: flex; flex-wrap: wrap; gap: 12px 28px; align-items: center; justify-content: space-between; }
+footer nav { display: flex; flex-wrap: wrap; gap: 20px; }
+footer a { color: var(--muted); }
+footer a:hover { color: var(--text); }
+
+/* Pasy piór — podpis Papugi; strona ustawia własne barwy przez --pioro-* */
+.piora {
+  height: 4px; border-radius: 2px;
+  background: linear-gradient(90deg, var(--pioro-1, #1c64c4), var(--pioro-2, #2c965c), var(--pioro-3, #f7ba1c), var(--pioro-4, #ce202f));
+}
+
+@media (max-width: 760px) {
+  section { padding: 40px 0; }
+  .kroki, .cechy { grid-template-columns: 1fr; }
+  .top nav { gap: 14px; }
+  .top nav .ukryj-mobile { display: none; }
+  .program { grid-template-columns: 72px 1fr; }
+  .program img { width: 72px; height: 72px; }
+  .program .akcje { grid-column: 1 / -1; }
+  th { width: 44%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+}
