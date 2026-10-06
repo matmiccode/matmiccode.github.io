@@ -1,0 +1,28 @@
+/* [Program] — to, co różni tę stronę od ramy MATCODE (../RAMA.md).
+   Tu mieszka jeden element własny: barwy podpisu i pokaz w hero.
+   Reszta wyglądu pochodzi z /css/v1/matcode.css i zostaje bez zmian. */
+
+:root {
+  /* Barwy własne programu, jeśli jakieś ma (np. --pioro-1..4 u Papugi).
+     Rama ma już --accent; nie dokładaj drugiego mocnego koloru. */
+}
+
+/* Hero: tekst po lewej, pokaz po prawej; na telefonie jedno pod drugim. */
+.hero { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 48px; align-items: center; padding: 40px 0 64px; }
+.hero h1 { font-size: clamp(2.2rem, 4vw, 3.2rem); margin-bottom: 18px; }
+.hero .lead { font-size: 1.15rem; color: var(--muted); max-width: 30rem; margin-bottom: 28px; }
+.hero .drobne { color: var(--faint); font-size: 0.9rem; margin: 14px 0 0; }
+
+/* Pokaz: karta na powierzchni, treść z programu. Jedna animacja na wejściu. */
+.pokaz {
+  background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
+  padding: 20px 22px 22px; font-size: 0.98rem;
+}
+
+@media (max-width: 860px) {
+  .hero { grid-template-columns: 1fr; gap: 32px; padding: 24px 0 48px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  /* Wyłącz tu animacje pokazu: pokaż stan końcowy od razu. */
+}

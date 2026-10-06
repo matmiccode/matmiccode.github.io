@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="pl">
+<!--
+  Szablon strony programu MATCODE. Instrukcja: ../RAMA.md.
+  Zastąp wszystkie fragmenty w nawiasach kwadratowych [TAK]. Usuń sekcje,
+  dla których program nie ma treści — nie wypełniaj ich na siłę.
+  Plik program.css przemianuj na [program].css i dopasuj odwołanie niżej.
+-->
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>[Program] – [hasło po myślniku]</title>
+<meta name="description" content="[Jedno zdanie: co program robi i gdzie. Drugie: dla kogo, za darmo, otwarty kod.]">
+<link rel="icon" href="favicon.ico">
+<meta property="og:title" content="[Program] – [hasło]">
+<meta property="og:description" content="[To samo zdanie co w description.]">
+<meta property="og:image" content="https://matmiccode.github.io/[program]/img/okno.png">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/v1/matcode.css">
+<link rel="stylesheet" href="program.css">
+</head>
+<body>
+
+<header class="wrap top">
+  <a class="marka" href="./"><img src="img/[program]-256.png" alt="" width="36" height="36">[Program]</a>
+  <nav>
+    <a href="#jak">Jak to działa</a>
+    <a href="#prywatnosc" class="ukryj-mobile">Prywatność</a>
+    <a href="https://github.com/matmiccode/[repo]" class="ukryj-mobile">Kod</a>
+    <a class="btn btn-primary btn-sm" href="https://github.com/matmiccode/[repo]/releases/latest" data-pobierz>Pobierz</a>
+  </nav>
+</header>
+
+<main>
+
+<section class="wrap hero">
+  <div>
+    <h1>[Co robi program]. [Gdzie: na Twoim komputerze].</h1>
+    <p class="lead">[Jedno zdanie o tym, co dostaje użytkownik.] [Jedno zdanie o tym, czego program nie robi: nie wysyła, nie wymaga konta.]</p>
+    <div class="cta">
+      <a class="btn btn-primary" href="https://github.com/matmiccode/[repo]/releases/latest" data-pobierz>Pobierz [Program] dla Windows</a>
+      <a class="btn btn-quiet" href="https://github.com/matmiccode/[repo]">Kod źródłowy</a>
+    </div>
+    <p class="drobne"><span data-wersja>Wersja [1.0.0]</span> · Windows 10 i&nbsp;11, 64-bit · za darmo, licencja MIT</p>
+  </div>
+
+  <!-- Pokaz: JEDEN element własny programu, który w pięć sekund pokazuje,
+       co program robi. Prawdziwa treść z jego świata, jedna animacja na
+       wejściu (w program.css), bez ruchu przy przewijaniu. -->
+  <div class="pokaz" aria-label="[Co pokazuje przykład]">
+    [POKAZ]
+  </div>
+</section>
+
+<!-- Tylko gdy użycie naprawdę jest kolejnością kroków. -->
+<section id="jak">
+  <div class="wrap">
+    <div class="sekcja-naglowek">
+      <h2>Trzy kroki</h2>
+      <p>[Jedno zdanie: bez konta, bez konfiguracji.]</p>
+    </div>
+    <ol class="kroki">
+      <li><h3>[Krok pierwszy]</h3><p>[Jedno, dwa zdania.]</p></li>
+      <li><h3>[Krok drugi]</h3><p>[Jedno, dwa zdania.]</p></li>
+      <li><h3>[Krok trzeci]</h3><p>[Jedno, dwa zdania.]</p></li>
+    </ol>
+  </div>
+</section>
+
+<section id="potrafi">
+  <div class="wrap">
+    <div class="sekcja-naglowek"><h2>Co potrafi</h2></div>
+    <dl class="cechy">
+      <div><dt>[Cecha]</dt><dd>[Jedno zdanie, co to daje użytkownikowi.]</dd></div>
+      <div><dt>[Cecha]</dt><dd>[Jedno zdanie.]</dd></div>
+      <div><dt>[Cecha]</dt><dd>[Jedno zdanie.]</dd></div>
+      <div><dt>[Cecha]</dt><dd>[Jedno zdanie.]</dd></div>
+    </dl>
+  </div>
+</section>
+
+<section id="okno">
+  <div class="wrap">
+    <div class="sekcja-naglowek">
+      <h2>Tak wygląda praca</h2>
+      <p>[Jedno zdanie o układzie okna.]</p>
+    </div>
+    <figure>
+      <img src="img/okno.png" alt="[Opis zrzutu: co widać w oknie]" width="[szer]" height="[wys]">
+      <figcaption>[Program] [wersja] w&nbsp;Windows 11.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section id="prywatnosc">
+  <div class="wrap">
+    <div class="sekcja-naglowek">
+      <h2>Prywatność</h2>
+      <p>[Jedno zdanie, dlaczego to ważne akurat tu.]</p>
+    </div>
+    <dl class="cechy">
+      <div><dt>Wszystko liczy się lokalnie</dt><dd>[Co dokładnie zostaje na komputerze.]</dd></div>
+      <div><dt>Z czym się łączy</dt><dd>[Każde połączenie: kiedy, dokąd, po co. Tylko prawda z kodu.]</dd></div>
+      <div><dt>Otwarty kod</dt><dd>Kod programu jest publiczny na licencji MIT. Każdy może sprawdzić, co program robi, i&nbsp;zbudować go samodzielnie.</dd></div>
+    </dl>
+  </div>
+</section>
+
+<section id="pobierz">
+  <div class="wrap">
+    <div class="sekcja-naglowek"><h2>Zanim pobierzesz</h2></div>
+    <table>
+      <tr><th>System</th><td>Windows 10 lub 11, 64-bit</td></tr>
+      <tr><th>Pamięć</th><td>[np. 4 GB RAM]</td></tr>
+      <tr><th>Miejsce na dysku</th><td>[rozmiar programu i danych]</td></tr>
+    </table>
+    <div class="uwaga odstep">
+      <p><strong>Windows ostrzeże przy pierwszej instalacji</strong> („System Windows ochronił ten komputer”), bo instalator nie ma płatnego certyfikatu wydawcy. Kliknij <em>Więcej informacji</em>, potem <em>Uruchom mimo to</em>.</p>
+    </div>
+    <div class="cta odstep-duzy">
+      <a class="btn btn-primary" href="https://github.com/matmiccode/[repo]/releases/latest" data-pobierz>Pobierz [Program] dla Windows</a>
+      <a class="btn btn-quiet" href="https://github.com/matmiccode/[repo]/releases">Wszystkie wydania i&nbsp;zmiany</a>
+    </div>
+    <p class="muted small odstep">Problem albo pomysł? <a href="https://github.com/matmiccode/[repo]/issues/new">Napisz na GitHubie</a>.</p>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>MATCODE · <a href="https://matmiccode.github.io/">inne programy</a></div>
+    <nav>
+      <a href="https://buycoffee.to/matcode">Postaw kawę autorowi</a>
+      <a href="https://github.com/matmiccode/[repo]/blob/main/LICENSE">Licencja MIT</a>
+      <a href="https://github.com/matmiccode">GitHub</a>
+    </nav>
+  </div>
+</footer>
+
+<script>
+// Numer wersji i bezpośredni odnośnik do instalatora z najnowszego wydania.
+// Bez odpowiedzi (brak sieci, limit API) zostają wartości wpisane w stronę.
+(async () => {
+  try {
+    const odp = await fetch("https://api.github.com/repos/matmiccode/[repo]/releases/latest",
+                            { headers: { Accept: "application/vnd.github+json" } });
+    if (!odp.ok) return;
+    const dane = await odp.json();
+    const wersja = String(dane.tag_name || "").replace(/^v/, "");
+    const plik = (dane.assets || []).find(z => /^[Program]-[\d.]+-Setup\.exe$/.test(z.name));
+    if (wersja) document.querySelectorAll("[data-wersja]").forEach(e => { e.textContent = "Wersja " + wersja; });
+    if (plik) document.querySelectorAll("[data-pobierz]").forEach(e => { e.href = plik.browser_download_url; });
+  } catch (_) { /* strona działa bez tego */ }
+})();
+</script>
+</body>
+</html>
