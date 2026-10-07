@@ -140,12 +140,11 @@ def okladka():
     W, H = 1500, 500
     im = Image.new("RGBA", (W, H), GRAFIT)
     d = ImageDraw.Draw(im)
-    z = znak(180, None)
-    im.alpha_composite(z, (72, 60))
-    d.text((276, 72), "MATCODE", font=kroj(96, "Bold"), fill=TEKST)
-    d.text((278, 196), HASLO_PL, font=kroj(40, "Medium"), fill=TEKST)
-    d.text((278, 250), HASLO_PL_2, font=kroj(27, "Regular"), fill=SZARY)
-    d.text((278, 292), HASLO_EN, font=kroj(25, "Regular"), fill=SZARY_EN)
+    # Bez znaku i nazwy: na stronie profilu GitHub awatar i „MATCODE” stoją obok README, więc baner ich nie powtarza.
+    d.rectangle((96, 110, 192, 118), fill=ZIELEN)
+    d.text((96, 146), HASLO_PL, font=kroj(56, "SemiBold"), fill=TEKST)
+    d.text((98, 230), HASLO_PL_2, font=kroj(30, "Regular"), fill=SZARY)
+    d.text((98, 276), HASLO_EN, font=kroj(28, "Regular"), fill=SZARY_EN)
     d.line((96, 356, W - 96, 356), fill=LINIA, width=2)
     x = 96
     for plik, nazwa, opis in (("papuga-256.png", "Papuga", "transkrypcje offline"),

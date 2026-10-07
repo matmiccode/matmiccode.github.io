@@ -67,7 +67,8 @@ EN: Grazie! The coffee has arrived! Warm thoughts your way :)
   Ten sam plik na GitHub (Settings → Public profile → Profile picture) i na buycoffee.to.
   Kadrowanie na buycoffee (vue-advanced-cropper) nie obejmie kołem całego kwadratu – obraz da się oddalić kółkiem myszy tylko do
   ok. 86 % – więc tam wgrany został ten sam znak zmniejszony do 870 px na grafitowym tle 1024 px (plik tymczasowy, bez repo).
-- Okładka: `matcode-okladka-1500x500.png` (3:1, baner README profilu = `matmiccode/img/matcode-okladka.png`) albo `-1920x640`.
+- Okładka: `matcode-okladka-1500x500.png` (3:1, baner README profilu = `matmiccode/img/matcode-okladka.png`) albo `-1920x640` –
+  od 2026-10-07 też bez znaku i nazwy (na stronie profilu GitHub awatar i „MATCODE” stoją obok README).
   **buycoffee.to kadruje tło profilu do 4:1** i na szerokim ekranie pokazuje tylko środkowy pas ok. 6:1 (awatar nachodzi na lewy dolny róg) –
   tam idzie `matcode-okladka-2000x500.png` (`okladka_4x1()` w `generuj.py`: treść w pasie y 85..415, lewy dolny róg pusty,
   **bez znaku i nazwy** – są już w awatarze i nagłówku profilu; tylko hasło PL/EN z zielonym akcentem i programy po prawej).
