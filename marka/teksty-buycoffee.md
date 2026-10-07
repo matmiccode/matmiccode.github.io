@@ -44,7 +44,7 @@ Masz pomysł albo coś nie działa? Napisz na github.com/matmiccode. Miłego dni
 
 ## Grafiki (ten folder)
 
-- Zdjęcie profilowe: `matcode-awatar-kolo-1024.png` (znak M na grafitowym kole; wygląda tak samo w kółku i w kwadracie).
+- Zdjęcie profilowe: `matcode-awatar-1024.png` (dwie zielone górki w M, pełny grafitowy kwadrat; serwis sam przytnie w kółko).
   Ten sam plik na GitHub (Settings → Public profile → Profile picture) i na buycoffee.to.
 - Okładka: `matcode-okladka-1500x500.png` (albo `-1920x640`, jeśli panel woli większą).
-- Ikony programów zostają własne (Papuga, Nutka); znak M oznacza autora i katalog.
+- Ikony programów zostają własne (Papuga, Nutka); znak „Łąka” oznacza autora i katalog.

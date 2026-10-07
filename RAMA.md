@@ -128,18 +128,25 @@ na siłę.
 6. Przycisk „Pobierz” celuje w `releases/latest`; skrypt na stronie podmienia
    go na bezpośredni plik z najnowszego wydania, gdy API GitHuba odpowie.
 
-## Marka: awatar i okładka
+## Marka: znak, awatar i okładka
 
-Autora i katalog oznacza **znak M**: zaokrąglony kwadrat `--accent-strong` (#2f74d0) z białą literą M, ten sam co favicon
-strony głównej. Programy mają własne ikony (Papuga, Nutka); znak M nigdy ich nie zastępuje.
-Pliki w `marka/` robi `python marka/generuj.py` (Pillow, Bricolage Grotesque pobierany automatycznie):
+Autora i katalog oznacza znak **„Łąka”**: dwie górki o miękkich, zaokrąglonych szczytach ułożone w literę M, każda z dwiema
+ścianami (jaśniejsza lewa, ciemniejsza prawa, jak złożony papier) i jednym złotym oknem z poświatą. Znaczenie: M jak MATCODE,
+dwa małe domy = małe programy, które mieszkają u Ciebie, a światło w oknie = ktoś w środku pracuje. Zieleń #6fd392/#3fb46f
+(ściana jasna) i #2f9a5e/#1f6b42 (ciemna), okno #ffe08a→#ffa63d, tło #1d2026. Programy mają własne ikony (Papuga, Nutka);
+znak nigdy ich nie zastępuje. Strona główna huba nosi zieleń znaku jako `--accent` (nadpisanie w jej `<style>`); strony
+programów zostają przy swoich akcentach.
 
-- `matcode-awatar-kolo-1024.png` – zdjęcie profilowe na GitHub i buycoffee.to (znak na grafitowym kole, wygląda tak samo
-  w kółku i w kwadracie); `matcode-awatar-1024.png` – sam znak (favicony, ikony).
-- `matcode-okladka-1500x500.png` (i `-1920x640`) – okładka profilu: grafit ramy, znak, nazwa, hasło, ikony programów.
+Źródła i pliki w `marka/` (`python marka/generuj.py`, Pillow; krój pobierany automatycznie):
+
+- `znak.svg` (bez tła), `znak-kwadrat.svg` (zaokrąglony kwadrat, favicon huba), `znak-kolo.svg` – wektory, jedyne źródło prawdy.
+- `matcode-awatar-1024.png` – zdjęcie profilowe na GitHub i buycoffee.to: pełny grafitowy kwadrat, serwis sam przytnie w kółko;
+  `matcode-awatar-kolo-1024.png` – to samo w kole z przezroczystym tłem; `matcode-ikona-*.png` – zaokrąglony kwadrat do ikon i kart.
+- `matcode-okladka-1500x500.png` (i `-1920x640`) – okładka profilu: grafit, znak, nazwa, hasło, ikony programów, adres w zieleni.
 - `teksty-buycoffee.md` – nazwa, opis, cel, podziękowanie na buycoffee.to/matcode, w tonie stron MATCODE.
 
-Nowy program: dopisać go do okładki (`generuj.py`, lista ikon) i wygenerować pliki ponownie.
+Nowy program: dopisać go do okładki (`generuj.py`, lista ikon) i wygenerować pliki ponownie. Zmiana znaku = zmiana
+`ZNAK_SVG` i funkcji `znak()` w jednym miejscu.
 
 ## Programy w ramie
 

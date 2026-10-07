@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+<defs>
+<clipPath id="cl-L"><rect width="22" height="64"/></clipPath><clipPath id="cl-R"><rect width="42" height="64"/></clipPath>
+<filter id="glow" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="1.8"/></filter>
+<linearGradient id="okno" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffe08a"/><stop offset="1" stop-color="#ffa63d"/></linearGradient>
+<linearGradient id="jasna" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#6fd392"/><stop offset="1" stop-color="#3fb46f"/></linearGradient>
+<linearGradient id="ciemna" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2f9a5e"/><stop offset="1" stop-color="#1f6b42"/></linearGradient>
+</defs>
+<rect width="64" height="64" rx="16" fill="#1d2026"/>
+<path d="M6 50 L19.6 17.4 Q22 12.4 24.4 17.4 L38 50 Z" fill="url(#ciemna)"/><path d="M6 50 L19.6 17.4 Q22 12.4 24.4 17.4 L38 50 Z" fill="url(#jasna)" clip-path="url(#cl-L)"/>
+<path d="M26 50 L39.6 17.4 Q42 12.4 44.4 17.4 L58 50 Z" fill="url(#ciemna)"/><path d="M26 50 L39.6 17.4 Q42 12.4 44.4 17.4 L58 50 Z" fill="url(#jasna)" clip-path="url(#cl-R)"/>
+<rect x="13" y="37" width="6" height="7" rx="1.6" fill="#ffd36a" filter="url(#glow)"/><rect x="45" y="37" width="6" height="7" rx="1.6" fill="#ffd36a" filter="url(#glow)"/>
+<rect x="13" y="37" width="6" height="7" rx="1.6" fill="url(#okno)"/><rect x="45" y="37" width="6" height="7" rx="1.6" fill="url(#okno)"/>
+</svg>

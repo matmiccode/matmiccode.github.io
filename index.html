@@ -5,12 +5,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>MATCODE</title>
 <meta name="description" content="Małe programy, które robią jedną rzecz dobrze. Działają na Twoim komputerze, nie w chmurze. Za darmo, z otwartym kodem.">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%232f74d0'/%3E%3Cpath d='M14 46V18h7l11 17 11-17h7v28h-7V30l-11 16-11-16v16z' fill='%23fff'/%3E%3C/svg%3E">
+<link rel="icon" href="marka/znak-kwadrat.svg" type="image/svg+xml">
+<link rel="icon" href="img/matcode-256.png" type="image/png" sizes="256x256">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/css/v1/matcode.css">
 <style>
+  /* Strona główna nosi barwy znaku MATCODE (zieleń „Łąka”); strony programów zostają przy swoich akcentach. */
+  :root { --accent: #3fb46f; --accent-strong: #2f9a5e; --accent-soft: #1b3a2a; --accent-ink: #ffffff; }
+  @media (prefers-color-scheme: light) { :root:not([data-theme="dark"]) { --accent: #2f9a5e; --accent-strong: #237a4a; --accent-soft: #dff3e6; } }
+  :root[data-theme="light"] { --accent: #2f9a5e; --accent-strong: #237a4a; --accent-soft: #dff3e6; }
   .hero { padding: 48px 0 56px; max-width: 46rem; }
   .hero h1 { margin-bottom: 18px; }
   .hero .lead { font-size: 1.15rem; color: var(--muted); margin: 0; }
@@ -20,7 +25,7 @@
 <body>
 
 <header class="wrap top">
-  <a class="marka" href="./">MATCODE</a>
+  <a class="marka" href="./"><img src="img/matcode-256.png" alt="" width="36" height="36">MATCODE</a>
   <nav>
     <a href="#programy">Programy</a>
     <a href="https://github.com/matmiccode">GitHub</a>
