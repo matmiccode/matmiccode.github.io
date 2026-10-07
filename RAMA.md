@@ -117,7 +117,7 @@ na siłę.
    `python -m http.server` i zrzuty (agent-browser) w trybie ciemnym,
    jasnym i przy 390 px szerokości. Sprawdzić: h1 w 2–3 liniach, przyciski
    obok siebie, zrzut się wczytuje (bez `loading="lazy"`).
-3. Włączyć Pages z `docs/` gałęzi `main`:
+3. Włączyć Pages z `docs/` gałęzi `main` (albo `master`, jeśli repo tak ma – Nutka):
    `gh api -X POST repos/matmiccode/<repo>/pages -f build_type=legacy -f "source[branch]=main" -f "source[path]=/docs"`.
 4. Strona główna (to repo): dodać `<li class="program">` w `index.html`
    (ikona 96 px do `img/`, nazwa, jedno zdanie, system i licencja,
@@ -133,3 +133,4 @@ na siłę.
 | Program | Repozytorium | Strona | Podpis własny |
 |---|---|---|---|
 | Papuga – transkrypcje offline | `matmiccode/papuga` | https://matmiccode.github.io/papuga/ | pasy piór ary (`--pioro-1..4`), pokaz transkrypcji |
+| Nutka – mp3 z YouTube i Spotify | `matmiccode/nutka` | https://matmiccode.github.io/nutka/ | barwy ikony róż→fiolet (`--nuta-1..3`, pasek `.nuty`, własny `--accent`), pokaz: wpisany tytuł zamienia się w mp3; instrukcja `instrukcja.html` na tej samej ramie, kopiowana obok exe z migawką `matcode.css` |
