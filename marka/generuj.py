@@ -163,15 +163,16 @@ def okladka():
 
 def okladka_4x1():
     """Okładka 4:1 dla buycoffee.to (kadrowanie tła profilu wymusza 4:1, a na szerokim ekranie widać tylko środkowy
-    pas ~6:1, na lewy dolny róg nachodzi awatar) - cała treść w pasie y 85..415, lewy dolny róg pusty."""
+    pas ~6:1, na lewy dolny róg nachodzi awatar) - cała treść w pasie y 85..415, lewy dolny róg pusty.
+    Tylko hasło PL/EN z zielonym akcentem i programy po prawej; znak i nazwa są już w awatarze i nagłówku profilu."""
     W, H = 2000, 500
     im = Image.new("RGBA", (W, H), GRAFIT)
     d = ImageDraw.Draw(im)
-    im.alpha_composite(znak(200, None), (110, 138))
-    d.text((350, 128), "MATCODE", font=kroj(100, "Bold"), fill=TEKST)
-    d.text((354, 258), HASLO_PL, font=kroj(40, "Medium"), fill=TEKST)
-    d.text((354, 312), HASLO_PL_2, font=kroj(27, "Regular"), fill=SZARY)
-    d.text((354, 352), HASLO_EN, font=kroj(25, "Regular"), fill=SZARY_EN)
+    # Bez znaku i nazwy: na stronie profilu buycoffee awatar i „MATCODE” stoją tuż pod okładką, więc okładka ich nie powtarza.
+    d.rectangle((120, 150, 216, 158), fill=ZIELEN)
+    d.text((120, 184), HASLO_PL, font=kroj(56, "SemiBold"), fill=TEKST)
+    d.text((122, 268), HASLO_PL_2, font=kroj(30, "Regular"), fill=SZARY)
+    d.text((122, 314), HASLO_EN, font=kroj(28, "Regular"), fill=SZARY_EN)
     d.line((1500, 160, 1500, 340), fill=LINIA, width=2)
     x, y = 1560, 160
     for plik, nazwa, opis in (("papuga-256.png", "Papuga", "transkrypcje offline"),
