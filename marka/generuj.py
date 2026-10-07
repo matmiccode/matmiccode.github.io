@@ -138,8 +138,8 @@ def okladka():
     z = znak(180, None)
     im.alpha_composite(z, (72, 60))
     d.text((276, 84), "MATCODE", font=kroj(96, "Bold"), fill=TEKST)
-    d.text((278, 208), "Małe programy, które robią jedną rzecz dobrze.", font=kroj(40, "Medium"), fill=TEKST)
-    d.text((278, 262), "Działają na Twoim komputerze, nie w chmurze. Za darmo, z otwartym kodem, po polsku.",
+    d.text((278, 208), "Małe programy na Windows. Klikasz i działa.", font=kroj(40, "Medium"), fill=TEKST)
+    d.text((278, 262), "Bez chmury i zakładania kont. Za darmo, z otwartym kodem, po polsku.",
            font=kroj(27, "Regular"), fill=SZARY)
     d.line((96, 356, W - 96, 356), fill=LINIA, width=2)
     x = 96
@@ -164,8 +164,8 @@ def okladka_4x1():
     d = ImageDraw.Draw(im)
     im.alpha_composite(znak(200, None), (110, 150))
     d.text((350, 146), "MATCODE", font=kroj(104, "Bold"), fill=TEKST)
-    d.text((354, 282), "Małe programy, które robią jedną rzecz dobrze.", font=kroj(40, "Medium"), fill=TEKST)
-    d.text((354, 338), "Działają na Twoim komputerze, nie w chmurze. Za darmo, z otwartym kodem, po polsku.",
+    d.text((354, 282), "Małe programy na Windows. Klikasz i działa.", font=kroj(40, "Medium"), fill=TEKST)
+    d.text((354, 338), "Bez chmury i zakładania kont. Za darmo, z otwartym kodem, po polsku.",
            font=kroj(27, "Regular"), fill=SZARY)
     d.line((1500, 160, 1500, 340), fill=LINIA, width=2)
     x, y = 1560, 160
