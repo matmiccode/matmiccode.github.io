@@ -18,6 +18,11 @@ FONT_URL = "https://github.com/google/fonts/raw/main/ofl/bricolagegrotesque/Bric
 FONT = Path(os.environ.get("TEMP", TU)) / "BricolageGrotesque.ttf"
 
 GRAFIT, POWIERZCHNIA, LINIA, TEKST, SZARY = "#15171c", "#1d2026", "#2c3039", "#e8eaee", "#959dab"
+SZARY_EN = "#7b8491"   # angielska linia pod polską: o stopień ciszej
+PIERSCIEN = "#e8eaee"  # jasny pierścień awatara na ciemne tła
+HASLO_PL = "Małe programy na Windows. Klikasz i działa."
+HASLO_PL_2 = "Bez chmury i zakładania kont. Za darmo, z otwartym kodem, po polsku."
+HASLO_EN = "Small Windows apps. Click and it works. No cloud, no sign-up. Free and open source."
 ZIELEN = "#3fb46f"
 JASNA = ("#6fd392", "#3fb46f")   # ściana lewa: góra -> dół
 CIEMNA = ("#2f9a5e", "#1f6b42")  # ściana prawa
@@ -137,10 +142,10 @@ def okladka():
     d = ImageDraw.Draw(im)
     z = znak(180, None)
     im.alpha_composite(z, (72, 60))
-    d.text((276, 84), "MATCODE", font=kroj(96, "Bold"), fill=TEKST)
-    d.text((278, 208), "Małe programy na Windows. Klikasz i działa.", font=kroj(40, "Medium"), fill=TEKST)
-    d.text((278, 262), "Bez chmury i zakładania kont. Za darmo, z otwartym kodem, po polsku.",
-           font=kroj(27, "Regular"), fill=SZARY)
+    d.text((276, 72), "MATCODE", font=kroj(96, "Bold"), fill=TEKST)
+    d.text((278, 196), HASLO_PL, font=kroj(40, "Medium"), fill=TEKST)
+    d.text((278, 250), HASLO_PL_2, font=kroj(27, "Regular"), fill=SZARY)
+    d.text((278, 292), HASLO_EN, font=kroj(25, "Regular"), fill=SZARY_EN)
     d.line((96, 356, W - 96, 356), fill=LINIA, width=2)
     x = 96
     for plik, nazwa, opis in (("papuga-256.png", "Papuga", "transkrypcje offline"),
@@ -162,11 +167,11 @@ def okladka_4x1():
     W, H = 2000, 500
     im = Image.new("RGBA", (W, H), GRAFIT)
     d = ImageDraw.Draw(im)
-    im.alpha_composite(znak(200, None), (110, 150))
-    d.text((350, 146), "MATCODE", font=kroj(104, "Bold"), fill=TEKST)
-    d.text((354, 282), "Małe programy na Windows. Klikasz i działa.", font=kroj(40, "Medium"), fill=TEKST)
-    d.text((354, 338), "Bez chmury i zakładania kont. Za darmo, z otwartym kodem, po polsku.",
-           font=kroj(27, "Regular"), fill=SZARY)
+    im.alpha_composite(znak(200, None), (110, 138))
+    d.text((350, 128), "MATCODE", font=kroj(100, "Bold"), fill=TEKST)
+    d.text((354, 258), HASLO_PL, font=kroj(40, "Medium"), fill=TEKST)
+    d.text((354, 312), HASLO_PL_2, font=kroj(27, "Regular"), fill=SZARY)
+    d.text((354, 352), HASLO_EN, font=kroj(25, "Regular"), fill=SZARY_EN)
     d.line((1500, 160, 1500, 340), fill=LINIA, width=2)
     x, y = 1560, 160
     for plik, nazwa, opis in (("papuga-256.png", "Papuga", "transkrypcje offline"),
@@ -180,9 +185,25 @@ def okladka_4x1():
     im.convert("RGB").save(TU / "matcode-okladka-2000x500.png", optimize=True)
 
 
+def awatar_pierscien(bok: int = 1024):
+    """Awatar na ciemne tła (buycoffee: koło awatara nachodzi na ciemną okładkę i zlewa się z nią): jasne tło staje się
+    pierścieniem po przycięciu w koło, w środku grafitowe koło (78 % boku) ze znakiem. Kadrowanie buycoffee obejmuje
+    najwyżej ~86 % obrazu, więc przy maksymalnym oddaleniu pierścień ma ok. 4 % średnicy."""
+    s = 4
+    W = bok * s
+    im = Image.new("RGBA", (W, W), PIERSCIEN)
+    r = round(0.39 * W)
+    ImageDraw.Draw(im).ellipse((W // 2 - r, W // 2 - r, W // 2 + r, W // 2 + r), fill=POWIERZCHNIA)
+    im = im.resize((bok, bok), Image.LANCZOS)
+    srednica = round(0.78 * bok)
+    im.alpha_composite(znak(srednica, None), ((bok - srednica) // 2, (bok - srednica) // 2))
+    im.convert("RGB").save(TU / f"matcode-awatar-pierscien-{bok}.png", optimize=True)
+
+
 if __name__ == "__main__":
     wektory()
     awatary()
+    awatar_pierscien()
     okladka()
     okladka_4x1()
     print("gotowe:", sorted(p.name for p in TU.glob("matcode-*.png")) + sorted(p.name for p in TU.glob("znak*.svg")))
