@@ -128,6 +128,19 @@ na siłę.
 6. Przycisk „Pobierz” celuje w `releases/latest`; skrypt na stronie podmienia
    go na bezpośredni plik z najnowszego wydania, gdy API GitHuba odpowie.
 
+## Marka: awatar i okładka
+
+Autora i katalog oznacza **znak M**: zaokrąglony kwadrat `--accent-strong` (#2f74d0) z białą literą M, ten sam co favicon
+strony głównej. Programy mają własne ikony (Papuga, Nutka); znak M nigdy ich nie zastępuje.
+Pliki w `marka/` robi `python marka/generuj.py` (Pillow, Bricolage Grotesque pobierany automatycznie):
+
+- `matcode-awatar-kolo-1024.png` – zdjęcie profilowe na GitHub i buycoffee.to (znak na grafitowym kole, wygląda tak samo
+  w kółku i w kwadracie); `matcode-awatar-1024.png` – sam znak (favicony, ikony).
+- `matcode-okladka-1500x500.png` (i `-1920x640`) – okładka profilu: grafit ramy, znak, nazwa, hasło, ikony programów.
+- `teksty-buycoffee.md` – nazwa, opis, cel, podziękowanie na buycoffee.to/matcode, w tonie stron MATCODE.
+
+Nowy program: dopisać go do okładki (`generuj.py`, lista ikon) i wygenerować pliki ponownie.
+
 ## Programy w ramie
 
 | Program | Repozytorium | Strona | Podpis własny |
