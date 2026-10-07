@@ -69,7 +69,9 @@ EN: Grazie! The coffee has arrived! Warm thoughts your way :)
   ok. 86 % – więc tam wgrany został ten sam znak zmniejszony do 870 px na grafitowym tle 1024 px (plik tymczasowy, bez repo).
 - Okładka: `matcode-okladka-1500x500.png` (3:1, baner README profilu = `matmiccode/img/matcode-okladka.png`) albo `-1920x640`.
   **buycoffee.to kadruje tło profilu do 4:1** i na szerokim ekranie pokazuje tylko środkowy pas ok. 6:1 (awatar nachodzi na lewy dolny róg) –
-  tam idzie `matcode-okladka-2000x500.png` (`okladka_4x1()` w `generuj.py`: treść w pasie y 85..415, lewy dolny róg pusty).
+  tam idzie `matcode-okladka-2000x500.png` (`okladka_4x1()` w `generuj.py`: treść w pasie y 85..415, lewy dolny róg pusty,
+  **bez znaku i nazwy** – są już w awatarze i nagłówku profilu; tylko hasło PL/EN z zielonym akcentem i programy po prawej).
+- Awatar na buycoffee: `matcode-awatar-pierscien-1024.png` (jasny pierścień, bo koło nachodzi na ciemną okładkę); kadrowanie oddalić do maksimum.
   Po zmianie hasła: `generuj.py` (Pillow z `build\venv` Nutki), skopiować 1500x500 do profilu, wgrać 2000x500 na buycoffee
   (kadrowanie → „Zapisz” w oknie → „Zapisz” pod sekcją, dopiero to zapisuje).
 - Ikony programów zostają własne (Papuga, Nutka); znak „Łąka” oznacza autora i katalog.
