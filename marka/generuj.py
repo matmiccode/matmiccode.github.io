@@ -156,8 +156,33 @@ def okladka():
     im.resize((1920, 640), Image.LANCZOS).save(TU / "matcode-okladka-1920x640.png", optimize=True)
 
 
+def okladka_4x1():
+    """Okładka 4:1 dla buycoffee.to (kadrowanie tła profilu wymusza 4:1, a na szerokim ekranie widać tylko środkowy
+    pas ~6:1, na lewy dolny róg nachodzi awatar) - cała treść w pasie y 85..415, lewy dolny róg pusty."""
+    W, H = 2000, 500
+    im = Image.new("RGBA", (W, H), GRAFIT)
+    d = ImageDraw.Draw(im)
+    im.alpha_composite(znak(200, None), (110, 150))
+    d.text((350, 146), "MATCODE", font=kroj(104, "Bold"), fill=TEKST)
+    d.text((354, 282), "Małe programy, które robią jedną rzecz dobrze.", font=kroj(40, "Medium"), fill=TEKST)
+    d.text((354, 338), "Działają na Twoim komputerze, nie w chmurze. Za darmo, z otwartym kodem, po polsku.",
+           font=kroj(27, "Regular"), fill=SZARY)
+    d.line((1500, 160, 1500, 340), fill=LINIA, width=2)
+    x, y = 1560, 160
+    for plik, nazwa, opis in (("papuga-256.png", "Papuga", "transkrypcje offline"),
+                              ("nutka-256.png", "Nutka", "mp3 z YouTube i Spotify")):
+        ik = Image.open(IMG / plik).convert("RGBA").resize((64, 64), Image.LANCZOS)
+        im.alpha_composite(ik, (x, y))
+        d.text((x + 80, y + 2), nazwa, font=kroj(28, "SemiBold"), fill=TEKST)
+        d.text((x + 80, y + 38), opis, font=kroj(21, "Regular"), fill=SZARY)
+        y += 96
+    d.text((W - 110, 372), "matmiccode.github.io", font=kroj(26, "Medium"), fill=ZIELEN, anchor="rm")
+    im.convert("RGB").save(TU / "matcode-okladka-2000x500.png", optimize=True)
+
+
 if __name__ == "__main__":
     wektory()
     awatary()
     okladka()
+    okladka_4x1()
     print("gotowe:", sorted(p.name for p in TU.glob("matcode-*.png")) + sorted(p.name for p in TU.glob("znak*.svg")))
