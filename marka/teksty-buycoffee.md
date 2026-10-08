@@ -9,14 +9,15 @@ MATCODE
 
 ## Hasło (hub `index.html`, okładki w `generuj.py`, bio GitHub)
 
-PL: Małe programy na Windows. Klikasz i działa. Bez chmury i zakładania kont.
-EN: Small Windows apps. Click and it works. No cloud, no sign-up.
+PL: Moje narzędzia na PC. Instalujesz i działają. Bez chmury i zakładania kont.   (słowa użytkownika, 2026-10-08; „małe” i „darmowe” odrzucone)
+EN: My PC tools. Install them and they just work. No cloud, no sign-up.
 
-Okładki: wiersz 1 „Małe programy na Windows. Klikasz i działa.”, wiersz 2 „Bez chmury i zakładania kont. Za darmo, z otwartym kodem, po polsku.”
+Okładki: wiersz 1 „Moje narzędzia na PC. Instalujesz i działają.”, wiersz 2 „Bez chmury i zakładania kont. Za darmo, z otwartym kodem, po polsku.”,
+wiersz 3 (EN, ciszej) „My PC tools. Install them and they just work. No cloud, no sign-up. Free and open source.”
 
-## Bio GitHub (137 znaków, limit 160)
+## Bio GitHub (limit 160 znaków)
 
-Małe programy na Windows. Klikasz i działa. Bez chmury i zakładania kont. · Small Windows apps. Click and it works. No cloud, no sign-up.
+Moje narzędzia na PC. Instalujesz i działają. Bez chmury i zakładania kont. · My PC tools. Install them and they just work. No cloud, no sign-up.
 
 ## Opis na buycoffee („Dlaczego warto Cię wesprzeć?”, limit 2000 znaków)
 
