@@ -20,32 +20,25 @@ Małe programy na Windows. Klikasz i działa. Bez chmury i zakładania kont. · 
 
 ## Opis na buycoffee („Dlaczego warto Cię wesprzeć?”, limit 2000 znaków)
 
-Cześć, tu MATCODE. Robię małe darmowe programy na Windows, bo zmęczyło mnie,
+Cześć, tu MATCODE. Robię programy na Windows, bo zmęczyło mnie,
 że do każdej drobnej rzeczy trzeba dziś zakładać konto i płacić abonament.
 
-Papuga spisuje nagrania i wie, kto mówi, a nagrania nigdzie z Twojego komputera nie wychodzą.
-Nutka robi z YouTube i Spotify porządne mp3 z okładką i tagami, także całe playlisty.
-Oba są za darmo, po polsku, z otwartym kodem. I takie zostaną.
-
-Kawa to zwykłe „dzięki, przydało się”. Programy nic na niej nie zyskują,
-za to ja mam paliwo na kolejną poprawkę, gdy YouTube znów coś zmieni.
+Programy są i będą darmowe, więc kawa to jedyna waluta, jaką przyjmuję :)
+Każda mówi mi, że to się komuś przydaje, i dodaje energii na dalszą pracę.
 
 Pomysł albo błąd: github.com/matmiccode. Wszystkie programy: matmiccode.github.io
 
 —
 
-Hi, MATCODE here. I make small free Windows apps, because I got tired of needing
+Hi, MATCODE here. I make Windows apps, because I got tired of needing
 an account and a subscription for every little thing.
 
-Papuga transcribes recordings and knows who said what. Your recordings never leave your computer.
-Nutka turns YouTube and Spotify into proper mp3s with cover art and tags, whole playlists too.
-Both are free and open source, and they'll stay that way. The interface is Polish for now,
-English is on the way.
-
-A coffee is a simple "thanks, that helped". The apps gain nothing from it,
-but I get fuel for the next fix when YouTube changes something again.
+The apps are and will stay free, so coffee is the only currency I accept :)
+Each one tells me this is useful to someone and adds energy for the work ahead.
 
 Ideas or bugs: github.com/matmiccode. All apps: matmiccode.github.io
+
+(2026-10-08: użytkownik wyrzucił akapit o programach – są w okładce – i akapit o kawie, który brzmiał jak zniechęcanie; kawa ma zachęcać.)
 
 ## Podziękowanie po wpłacie
 
