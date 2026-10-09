@@ -111,6 +111,18 @@ Każda nowa obietnica musi być prawdą dla wszystkich programów z listy.
 Sekcję, która dla danego programu nie ma treści, usuwa się, nie wypełnia
 na siłę.
 
+## Wersja angielska strony programu
+
+Program z angielskim interfejsem ma też angielską stronę i instrukcję:
+`docs/en/index.html` i `docs/en/instrukcja.html` (ścieżki względne `../`
+do `nutka.css`, `favicon.ico`, `img/`; arkusz ramy nadal `/css/v1/matcode.css`),
+zrzuty z angielskiego okna w `docs/img/en/`. Obie wersje mają
+`<link rel="alternate" hreflang="pl|en|x-default">`, a w `nav` cichy
+odnośnik do drugiego języka („English” / „Polski”, `class="ukryj-mobile"`).
+Teksty tłumaczy się sensem, nie słowo w słowo; nazwy przycisków muszą
+zgadzać się z angielskim oknem programu. Pierwsza taka strona: Nutka
+(`/nutka/en/`).
+
 ## Nowy program — lista kroków
 
 1. W repozytorium programu: katalog `docs/` z plikami z `szablon/`
