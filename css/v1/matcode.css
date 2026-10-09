@@ -93,6 +93,13 @@ p { margin: 0 0 1em; }
 .top nav { display: flex; gap: 22px; align-items: center; font-size: 0.95rem; }
 .top nav a { color: var(--muted); }
 .top nav a:hover { color: var(--text); text-decoration: none; }
+/* Przełącznik języka w nagłówku: jedna pigułka z drugim językiem (EN na polskiej stronie, PL na angielskiej),
+   celuje w bliźniaczą stronę /en/ albo wersję polską. Widoczna też na telefonie. */
+.top nav .jezyk {
+  padding: 6px 10px; border: 1px solid var(--line-strong); border-radius: 999px;
+  font-size: 0.78rem; font-weight: 600; letter-spacing: 0.08em; line-height: 1; color: var(--muted);
+}
+.top nav .jezyk:hover { color: var(--text); border-color: var(--text); text-decoration: none; }
 
 /* Przyciski */
 .btn {

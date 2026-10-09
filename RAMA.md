@@ -59,7 +59,7 @@ nic nie animuje się przy przewijaniu, `prefers-reduced-motion` wyłącza wszyst
 
 - `.top`, `.marka` — nagłówek strony z ikoną i nazwą, `nav` z odnośnikami,
   ostatni jako `.btn.btn-primary.btn-sm` (Pobierz). `.ukryj-mobile` chowa
-  odnośnik na telefonie.
+  odnośnik na telefonie. `.jezyk` — pigułka przełącznika języka (EN / PL).
 - `.btn`, `.btn-primary`, `.btn-quiet`, `.btn-sm`, `.cta` (rząd przycisków).
 - `section` + `.wrap`, `.sekcja-naglowek` (h2 + jedno zdanie).
 - `.kroki` — numerowane kroki; **tylko** gdy treść jest kolejnością.
@@ -117,8 +117,11 @@ Program z angielskim interfejsem ma też angielską stronę i instrukcję:
 `docs/en/index.html` i `docs/en/instrukcja.html` (ścieżki względne `../`
 do `nutka.css`, `favicon.ico`, `img/`; arkusz ramy nadal `/css/v1/matcode.css`),
 zrzuty z angielskiego okna w `docs/img/en/`. Obie wersje mają
-`<link rel="alternate" hreflang="pl|en|x-default">`, a w `nav` cichy
-odnośnik do drugiego języka („English” / „Polski”, `class="ukryj-mobile"`).
+`<link rel="alternate" hreflang="pl|en|x-default">`, a w `nav` pigułkę
+`.jezyk` z kodem drugiego języka (`EN` na polskiej stronie, `PL` na
+angielskiej; `lang`/`hreflang` na odnośniku), tuż przed przyciskiem „Pobierz”.
+Strona główna ma własną wersję `en/index.html` z kartami celującymi
+w `<program>/en/`.
 Teksty tłumaczy się sensem, nie słowo w słowo; nazwy przycisków muszą
 zgadzać się z angielskim oknem programu. Pierwsza taka strona: Nutka
 (`/nutka/en/`).

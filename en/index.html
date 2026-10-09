@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MATCODE</title>
+<meta name="description" content="My PC tools. Install them and they just work. No cloud, no sign-up. Free and open source.">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#15171c">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#f4f5f8">
+<link rel="icon" href="../marka/znak-kwadrat.svg" type="image/svg+xml">
+<link rel="icon" href="../img/matcode-256.png" type="image/png" sizes="256x256">
+<link rel="alternate" hreflang="pl" href="https://matmiccode.github.io/">
+<link rel="alternate" hreflang="en" href="https://matmiccode.github.io/en/">
+<link rel="alternate" hreflang="x-default" href="https://matmiccode.github.io/">
+<meta property="og:title" content="MATCODE – my PC tools">
+<meta property="og:description" content="Install them and they just work. No cloud, no sign-up. Free and open source.">
+<meta property="og:image" content="https://matmiccode.github.io/img/matcode-og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://matmiccode.github.io/en/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/v1/matcode.css">
+<style>
+  /* The home page wears the MATCODE mark's green; app pages keep their own accents. */
+  :root { --accent: #3fb46f; --accent-strong: #2f9a5e; --accent-soft: #1b3a2a; --accent-ink: #ffffff; }
+  @media (prefers-color-scheme: light) { :root:not([data-theme="dark"]) { --accent: #2f9a5e; --accent-strong: #237a4a; --accent-soft: #dff3e6; } }
+  :root[data-theme="light"] { --accent: #2f9a5e; --accent-strong: #237a4a; --accent-soft: #dff3e6; }
+  .hero { padding: 48px 0 56px; max-width: 46rem; }
+  .hero h1 { margin-bottom: 18px; }
+  .hero .lead { font-size: 1.15rem; color: var(--muted); margin: 0; }
+  .program .nazwa-pelna { font-weight: 400; color: var(--muted); }
+</style>
+</head>
+<body>
+
+<header class="wrap top">
+  <a class="marka" href="./"><img src="../img/matcode-256.png" alt="" width="36" height="36">MATCODE</a>
+  <nav>
+    <a href="#apps">Apps</a>
+    <a href="#principles" class="ukryj-mobile">Principles</a>
+    <a href="https://github.com/matmiccode">GitHub</a>
+    <a class="jezyk" href="../" lang="pl" hreflang="pl" title="Wersja polska">PL</a>
+  </nav>
+</header>
+
+<main>
+
+<section class="wrap hero">
+  <h1>My PC tools. Install them and they just work.</h1>
+  <p class="lead">No cloud, no sign-up. Free and open source, in Polish and English.</p>
+</section>
+
+<section id="apps">
+  <div class="wrap">
+    <ul class="programy">
+      <li class="program">
+        <img src="../img/papuga-256.png" alt="" width="96" height="96">
+        <div>
+          <h3>Papuga <span class="nazwa-pelna">– offline transcription</span></h3>
+          <p>Turns recordings into text and tells who is speaking. Sends nothing to the internet. Interface in Polish for now.</p>
+          <p class="meta"><span data-wersja="papuga"></span>Windows 10 and 11 · MIT license</p>
+        </div>
+        <div class="akcje">
+          <a class="btn btn-primary btn-sm" href="../papuga/en/">App page</a>
+          <a class="btn btn-quiet btn-sm" href="https://github.com/matmiccode/papuga/releases/latest" data-pobierz="papuga">Download</a>
+        </div>
+      </li>
+      <li class="program">
+        <img src="../img/nutka-256.png" alt="" width="96" height="96">
+        <div>
+          <h3>Nutka <span class="nazwa-pelna">– mp3 from YouTube and Spotify</span></h3>
+          <p>Type a title or paste a link and get an mp3 with cover art. Also downloads whole albums and playlists from Spotify.</p>
+          <p class="meta"><span data-wersja="nutka"></span>Windows 10 and 11 · MIT license · Polish and English</p>
+        </div>
+        <div class="akcje">
+          <a class="btn btn-primary btn-sm" href="../nutka/en/">App page</a>
+          <a class="btn btn-quiet btn-sm" href="https://github.com/matmiccode/nutka/releases/latest" data-pobierz="nutka">Download</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section id="principles">
+  <div class="wrap">
+    <div class="sekcja-naglowek">
+      <h2>Shared principles</h2>
+      <p>Every MATCODE app works the same way, whatever it does.</p>
+    </div>
+    <dl class="cechy">
+      <div>
+        <dt>Your files stay with you</dt>
+        <dd>Results and settings live on your disk. The app connects to the internet only for what it needs to do its job, and its page lists what and when.</dd>
+      </div>
+      <div>
+        <dt>No account, no ads</dt>
+        <dd>Install and use. There is no registration, no login, no telemetry and no ads.</dd>
+      </div>
+      <div>
+        <dt>Open source</dt>
+        <dd>The code of every app is public under the MIT license. You can check what it does, report a bug or build it yourself.</dd>
+      </div>
+      <div>
+        <dt>Signed releases</dt>
+        <dd>The app checks for a new version by itself and installs only releases signed with the author's key. It installs in your user folder, without administrator rights.</dd>
+      </div>
+    </dl>
+  </div>
+</section>
+
+<section id="support">
+  <div class="wrap">
+    <div class="sekcja-naglowek">
+      <h2>Support</h2>
+      <p>The apps are free and will stay free. If one of them saved you an hour, you can buy the author a coffee.</p>
+    </div>
+    <a class="btn btn-quiet" href="https://buycoffee.to/matcode">Buy the author a coffee</a>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>MATCODE</div>
+    <nav>
+      <a href="https://github.com/matmiccode">GitHub</a>
+      <a href="https://buycoffee.to/matcode">buycoffee.to</a>
+    </nav>
+  </div>
+</footer>
+
+<script>
+// Version number and a direct installer link from the latest release of every app on the list
+// (data-pobierz="<repo>"). Without an API response (offline, rate limit) the releases page and
+// the list without version numbers stay.
+(async () => {
+  const repa = [...new Set([...document.querySelectorAll("[data-pobierz]")].map(e => e.dataset.pobierz))];
+  await Promise.all(repa.map(async repo => {
+    try {
+      const odp = await fetch(`https://api.github.com/repos/matmiccode/${repo}/releases/latest`,
+                              { headers: { Accept: "application/vnd.github+json" } });
+      if (!odp.ok) return;
+      const dane = await odp.json();
+      const wersja = String(dane.tag_name || "").replace(/^v/, "");
+      const plik = (dane.assets || []).find(z => /Setup\.exe$/i.test(z.name));
+      if (wersja) document.querySelectorAll(`[data-wersja="${repo}"]`).forEach(e => { e.textContent = "Version " + wersja + " · "; });
+      if (plik) document.querySelectorAll(`[data-pobierz="${repo}"]`).forEach(e => { e.href = plik.browser_download_url; });
+    } catch (_) { /* the page works without it */ }
+  }));
+})();
+</script>
+</body>
+</html>
