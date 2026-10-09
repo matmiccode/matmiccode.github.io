@@ -1,6 +1,6 @@
 """Znak MATCODE „Łąka” (dwie górki w kształcie M, złote okna) i grafiki profilowe (GitHub, buycoffee.to).
 
-  python marka/generuj.py   -> marka/matcode-awatar-*.png, marka/matcode-okladka-*.png, marka/znak*.svg
+  python marka/generuj.py   -> marka/matcode-awatar-*.png, marka/matcode-okladka-*.png, marka/znak*.svg, img/matcode-og.png
 
 Geometria znaku na siatce 64 (jak w SVG): dwie górki o zaokrąglonych szczytach, każda z dwiema ścianami
 (jaśniejsza lewa, ciemniejsza prawa), w każdej jedno złote okno z poświatą. Prawa górka leży przed lewą.
@@ -200,10 +200,36 @@ def awatar_pierscien(bok: int = 1024):
     im.convert("RGB").save(TU / f"matcode-awatar-pierscien-{bok}.png", optimize=True)
 
 
+def og_obrazek():
+    """Obrazek do udostępniania strony głównej (og:image): 1200x630, proporcja 1,91:1, której chcą Facebook, LinkedIn
+    i komunikatory. Znak i nazwa są tu potrzebne (podgląd linku nie ma awatara obok), pod nimi hasło i programy."""
+    W, H = 1200, 630
+    im = Image.new("RGBA", (W, H), GRAFIT)
+    d = ImageDraw.Draw(im)
+    im.alpha_composite(znak(104, None), (96, 84))
+    d.text((224, 118), "MATCODE", font=kroj(58, "SemiBold"), fill=TEKST)
+    d.rectangle((96, 236, 192, 244), fill=ZIELEN)
+    d.text((96, 268), HASLO_PL, font=kroj(46, "SemiBold"), fill=TEKST)
+    d.text((98, 336), HASLO_PL_2, font=kroj(25, "Regular"), fill=SZARY)
+    d.text((98, 374), HASLO_EN, font=kroj(23, "Regular"), fill=SZARY_EN)
+    d.line((96, 452, W - 96, 452), fill=LINIA, width=2)
+    x = 96
+    for plik, nazwa, opis in (("papuga-256.png", "Papuga", "transkrypcje offline"),
+                              ("nutka-256.png", "Nutka", "mp3 z YouTube i Spotify")):
+        ik = Image.open(IMG / plik).convert("RGBA").resize((64, 64), Image.LANCZOS)
+        im.alpha_composite(ik, (x, 492))
+        d.text((x + 80, 494), nazwa, font=kroj(27, "SemiBold"), fill=TEKST)
+        d.text((x + 80, 530), opis, font=kroj(20, "Regular"), fill=SZARY)
+        x += 380
+    d.text((W - 96, 526), "matmiccode.github.io", font=kroj(24, "Medium"), fill=ZIELEN, anchor="rm")
+    im.convert("RGB").save(IMG / "matcode-og.png", optimize=True)
+
+
 if __name__ == "__main__":
     wektory()
     awatary()
     awatar_pierscien()
     okladka()
     okladka_4x1()
+    og_obrazek()
     print("gotowe:", sorted(p.name for p in TU.glob("matcode-*.png")) + sorted(p.name for p in TU.glob("znak*.svg")))

@@ -67,7 +67,7 @@ nic nie animuje się przy przewijaniu, `prefers-reduced-motion` wyłącza wszyst
 - `figure` + `figcaption` — zrzut ekranu z cienką ramką.
 - `table` — wymagania (`th` nazwa, `td` wartość).
 - `.uwaga` — ramka na jedną ważną informację (np. ostrzeżenie SmartScreen).
-- `.programy` / `.program` — lista programów na stronie głównej.
+- `.programy` / `.program` — lista programów na stronie głównej (poniżej 480 px ikona nad tekstem, nie obok).
 - `footer` — stopka: po lewej „MATCODE · inne programy”, po prawej odnośniki.
 - `.piora` — pasek 4 px z gradientu `--pioro-1..4` (podpis Papugi; inny
   program ustawia własne barwy albo go nie używa).
@@ -103,6 +103,11 @@ zdaniową wielkością liter, po polsku, bez emoji.
 7. **Stopka** — MATCODE · inne programy; Postaw kawę autorowi; licencje;
    GitHub.
 
+Strona główna ma własną kolejność: hero z hasłem, lista programów, **Wspólne
+zasady** (cztery obietnice każdego programu jako `.cechy`: pliki u Ciebie,
+bez konta i reklam, otwarty kod, podpisane wydania), wsparcie, stopka.
+Każda nowa obietnica musi być prawdą dla wszystkich programów z listy.
+
 Sekcję, która dla danego programu nie ma treści, usuwa się, nie wypełnia
 na siłę.
 
@@ -127,6 +132,10 @@ na siłę.
    96 px do `img/`, `git push`.
 6. Przycisk „Pobierz” celuje w `releases/latest`; skrypt na stronie podmienia
    go na bezpośredni plik z najnowszego wydania, gdy API GitHuba odpowie.
+   Na stronie głównej ten sam skrypt obsługuje każdą kartę z `data-pobierz="<repo>"`
+   (instalator = asset o nazwie kończącej się na `Setup.exe`) i wpisuje
+   „Wersja X · ” do `<span data-wersja="<repo>">` w linii `.meta` — nowy
+   program dostaje to przez same atrybuty.
 
 ## Marka: znak, awatar i okładka
 
@@ -143,6 +152,8 @@ programów zostają przy swoich akcentach.
 - `matcode-awatar-1024.png` – zdjęcie profilowe na GitHub i buycoffee.to: pełny grafitowy kwadrat, serwis sam przytnie w kółko;
   `matcode-awatar-kolo-1024.png` – to samo w kole z przezroczystym tłem; `matcode-ikona-*.png` – zaokrąglony kwadrat do ikon i kart.
 - `matcode-okladka-1500x500.png` (i `-1920x640`) – okładka profilu: grafit, znak, nazwa, hasło, ikony programów, adres w zieleni.
+- `img/matcode-og.png` (1200×630) – obrazek `og:image` strony głównej (podgląd linku na Facebooku, LinkedInie, w komunikatorach);
+  strony programów mają w `og:image` własny zrzut okna.
 - `teksty-buycoffee.md` – nazwa, opis, cel, podziękowanie na buycoffee.to/matcode, w tonie stron MATCODE.
 
 Nowy program: dopisać go do okładki (`generuj.py`, lista ikon) i wygenerować pliki ponownie. Zmiana znaku = zmiana

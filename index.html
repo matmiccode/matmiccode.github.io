@@ -5,8 +5,18 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>MATCODE</title>
 <meta name="description" content="Moje narzędzia na PC. Instalujesz i działają. Bez chmury i zakładania kont. Za darmo, z otwartym kodem.">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#15171c">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#f4f5f8">
 <link rel="icon" href="marka/znak-kwadrat.svg" type="image/svg+xml">
 <link rel="icon" href="img/matcode-256.png" type="image/png" sizes="256x256">
+<meta property="og:title" content="MATCODE – moje narzędzia na PC">
+<meta property="og:description" content="Instalujesz i działają. Bez chmury i zakładania kont. Za darmo, z otwartym kodem, po polsku.">
+<meta property="og:image" content="https://matmiccode.github.io/img/matcode-og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://matmiccode.github.io/">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600&display=swap" rel="stylesheet">
@@ -28,6 +38,7 @@
   <a class="marka" href="./"><img src="img/matcode-256.png" alt="" width="36" height="36">MATCODE</a>
   <nav>
     <a href="#programy">Programy</a>
+    <a href="#zasady" class="ukryj-mobile">Zasady</a>
     <a href="https://github.com/matmiccode">GitHub</a>
   </nav>
 </header>
@@ -47,11 +58,11 @@
         <div>
           <h3>Papuga <span class="nazwa-pelna">– transkrypcje offline</span></h3>
           <p>Zamienia nagrania w&nbsp;tekst i&nbsp;rozpoznaje, kto mówi. Nic nie wysyła do internetu.</p>
-          <p class="meta">Windows 10 i&nbsp;11 · licencja MIT</p>
+          <p class="meta"><span data-wersja="papuga"></span>Windows 10 i&nbsp;11 · licencja MIT</p>
         </div>
         <div class="akcje">
           <a class="btn btn-primary btn-sm" href="papuga/">Strona programu</a>
-          <a class="btn btn-quiet btn-sm" href="https://github.com/matmiccode/papuga/releases/latest">Pobierz</a>
+          <a class="btn btn-quiet btn-sm" href="https://github.com/matmiccode/papuga/releases/latest" data-pobierz="papuga">Pobierz</a>
         </div>
       </li>
       <li class="program">
@@ -59,14 +70,41 @@
         <div>
           <h3>Nutka <span class="nazwa-pelna">– mp3 z YouTube i Spotify</span></h3>
           <p>Wpisz tytuł albo wklej link i&nbsp;dostajesz mp3 z&nbsp;okładką. Pobiera też całe albumy i&nbsp;playlisty ze Spotify.</p>
-          <p class="meta">Windows 10 i&nbsp;11 · licencja MIT</p>
+          <p class="meta"><span data-wersja="nutka"></span>Windows 10 i&nbsp;11 · licencja MIT</p>
         </div>
         <div class="akcje">
           <a class="btn btn-primary btn-sm" href="nutka/">Strona programu</a>
-          <a class="btn btn-quiet btn-sm" href="https://github.com/matmiccode/nutka/releases/latest">Pobierz</a>
+          <a class="btn btn-quiet btn-sm" href="https://github.com/matmiccode/nutka/releases/latest" data-pobierz="nutka">Pobierz</a>
         </div>
       </li>
     </ul>
+  </div>
+</section>
+
+<section id="zasady">
+  <div class="wrap">
+    <div class="sekcja-naglowek">
+      <h2>Wspólne zasady</h2>
+      <p>Każdy program MATCODE działa tak samo, niezależnie od tego, co robi.</p>
+    </div>
+    <dl class="cechy">
+      <div>
+        <dt>Twoje pliki zostają u&nbsp;Ciebie</dt>
+        <dd>Wyniki i&nbsp;ustawienia leżą na Twoim dysku. Z&nbsp;internetem program łączy się tylko po to, czego potrzebuje do pracy, a&nbsp;jego strona wymienia, z&nbsp;czym i&nbsp;kiedy.</dd>
+      </div>
+      <div>
+        <dt>Bez konta i&nbsp;bez reklam</dt>
+        <dd>Instalujesz i&nbsp;używasz. Nie ma rejestracji, logowania, telemetrii ani reklam.</dd>
+      </div>
+      <div>
+        <dt>Otwarty kod</dt>
+        <dd>Kod każdego programu jest publiczny na licencji MIT. Możesz sprawdzić, co robi, zgłosić błąd albo zbudować go samodzielnie.</dd>
+      </div>
+      <div>
+        <dt>Podpisane wydania</dt>
+        <dd>Program sam sprawdza, czy jest nowa wersja, i&nbsp;instaluje tylko wydania podpisane kluczem autora. Instalacja w&nbsp;folderze użytkownika, bez uprawnień administratora.</dd>
+      </div>
+    </dl>
   </div>
 </section>
 
@@ -92,5 +130,25 @@
   </div>
 </footer>
 
+<script>
+// Numer wersji i bezpośredni odnośnik do instalatora z najnowszego wydania każdego programu
+// z listy (data-pobierz="<repo>"). Bez odpowiedzi API (brak sieci, limit) zostaje strona wydań
+// i lista bez numerów wersji.
+(async () => {
+  const repa = [...new Set([...document.querySelectorAll("[data-pobierz]")].map(e => e.dataset.pobierz))];
+  await Promise.all(repa.map(async repo => {
+    try {
+      const odp = await fetch(`https://api.github.com/repos/matmiccode/${repo}/releases/latest`,
+                              { headers: { Accept: "application/vnd.github+json" } });
+      if (!odp.ok) return;
+      const dane = await odp.json();
+      const wersja = String(dane.tag_name || "").replace(/^v/, "");
+      const plik = (dane.assets || []).find(z => /Setup\.exe$/i.test(z.name));
+      if (wersja) document.querySelectorAll(`[data-wersja="${repo}"]`).forEach(e => { e.textContent = "Wersja " + wersja + " · "; });
+      if (plik) document.querySelectorAll(`[data-pobierz="${repo}"]`).forEach(e => { e.href = plik.browser_download_url; });
+    } catch (_) { /* strona działa bez tego */ }
+  }));
+})();
+</script>
 </body>
 </html>
