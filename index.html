@@ -81,6 +81,11 @@
           <a class="btn btn-quiet btn-sm" href="https://github.com/matmiccode/nutka/releases/latest" data-pobierz="nutka">Pobierz</a>
         </div>
       </li>
+      <li class="program">
+        <img src="img/radiomat-256.png" alt="" width="96" height="96">
+        <div><h3>radioMAT</h3><p>Polskie radio przy zegarku Windows. Trzy skróty do stacji, katalog i tytuły utworów.</p><p class="meta"><span data-wersja="radiomat-app"></span>Windows 11 x64 · MIT · PL/EN</p></div>
+        <div class="akcje"><a class="btn btn-primary btn-sm" href="radiomat-app/">Strona programu</a><a class="btn btn-quiet btn-sm" href="https://github.com/matmiccode/radiomat-app/releases/latest" data-pobierz="radiomat-app">Pobierz</a></div>
+      </li>
     </ul>
   </div>
 </section>
@@ -147,7 +152,7 @@
       if (!odp.ok) return;
       const dane = await odp.json();
       const wersja = String(dane.tag_name || "").replace(/^v/, "");
-      const plik = (dane.assets || []).find(z => /Setup\.exe$/i.test(z.name));
+      const plik = (dane.assets || []).find(z => (/Setup\.exe$/i.test(z.name) || /^radioMAT-Setup-\d+\.\d+\.\d+-x64\.exe$/.test(z.name)));
       if (wersja) document.querySelectorAll(`[data-wersja="${repo}"]`).forEach(e => { e.textContent = "Wersja " + wersja + " · "; });
       if (plik) document.querySelectorAll(`[data-pobierz="${repo}"]`).forEach(e => { e.href = plik.browser_download_url; });
     } catch (_) { /* strona działa bez tego */ }

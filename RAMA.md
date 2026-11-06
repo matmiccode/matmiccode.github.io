@@ -180,3 +180,4 @@ Nowy program: dopisać go do okładki (`generuj.py`, lista ikon) i wygenerować 
 |---|---|---|---|
 | Papuga – transkrypcje offline | `matmiccode/papuga` | https://matmiccode.github.io/papuga/ | pasy piór ary (`--pioro-1..4`), pokaz transkrypcji |
 | Nutka – mp3 z YouTube i Spotify | `matmiccode/nutka` | https://matmiccode.github.io/nutka/ | barwy ikony róż→fiolet (`--nuta-1..3`, pasek `.nuty`, własny `--accent`), pokaz: wpisany tytuł zamienia się w mp3; instrukcja `instrukcja.html` na tej samej ramie, kopiowana obok exe z migawką `matcode.css` |
+| radioMAT – polskie radio przy zegarku | `matmiccode/radiomat-app` | https://matmiccode.github.io/radiomat-app/ | niebieski akcent #3057AF, pokaz wyboru stacji, instrukcja PL/EN |

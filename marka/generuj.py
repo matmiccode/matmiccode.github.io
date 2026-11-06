@@ -148,13 +148,14 @@ def okladka():
     d.line((96, 356, W - 96, 356), fill=LINIA, width=2)
     x = 96
     for plik, nazwa, opis in (("papuga-256.png", "Papuga", "transkrypcje offline"),
-                              ("nutka-256.png", "Nutka", "mp3 z YouTube i Spotify")):
+                              ("nutka-256.png", "Nutka", "mp3 z YouTube i Spotify"),
+                              ("radiomat-256.png", "radioMAT", "radio przy zegarku")):
         ik = Image.open(IMG / plik).convert("RGBA").resize((72, 72), Image.LANCZOS)
         im.alpha_composite(ik, (x, 392))
         d.text((x + 90, 394), nazwa, font=kroj(30, "SemiBold"), fill=TEKST)
         d.text((x + 90, 434), opis, font=kroj(23, "Regular"), fill=SZARY)
         x += 420
-    d.text((W - 96, 418), "matmiccode.github.io", font=kroj(26, "Medium"), fill=ZIELEN, anchor="rm")
+    d.text((W - 96, 480), "matmiccode.github.io", font=kroj(26, "Medium"), fill=ZIELEN, anchor="rm")
     im = im.convert("RGB")
     im.save(TU / "matcode-okladka-1500x500.png", optimize=True)
     im.resize((1920, 640), Image.LANCZOS).save(TU / "matcode-okladka-1920x640.png", optimize=True)
@@ -172,16 +173,17 @@ def okladka_4x1():
     d.text((120, 184), HASLO_PL, font=kroj(56, "SemiBold"), fill=TEKST)
     d.text((122, 268), HASLO_PL_2, font=kroj(30, "Regular"), fill=SZARY)
     d.text((122, 314), HASLO_EN, font=kroj(28, "Regular"), fill=SZARY_EN)
-    d.line((1500, 160, 1500, 340), fill=LINIA, width=2)
+    d.line((1500, 160, 1500, 430), fill=LINIA, width=2)
     x, y = 1560, 160
     for plik, nazwa, opis in (("papuga-256.png", "Papuga", "transkrypcje offline"),
-                              ("nutka-256.png", "Nutka", "mp3 z YouTube i Spotify")):
+                              ("nutka-256.png", "Nutka", "mp3 z YouTube i Spotify"),
+                              ("radiomat-256.png", "radioMAT", "radio przy zegarku")):
         ik = Image.open(IMG / plik).convert("RGBA").resize((64, 64), Image.LANCZOS)
         im.alpha_composite(ik, (x, y))
         d.text((x + 80, y + 2), nazwa, font=kroj(28, "SemiBold"), fill=TEKST)
         d.text((x + 80, y + 38), opis, font=kroj(21, "Regular"), fill=SZARY)
         y += 96
-    d.text((W - 110, 372), "matmiccode.github.io", font=kroj(26, "Medium"), fill=ZIELEN, anchor="rm")
+    d.text((W - 110, 452), "matmiccode.github.io", font=kroj(26, "Medium"), fill=ZIELEN, anchor="rm")
     im.convert("RGB").save(TU / "matcode-okladka-2000x500.png", optimize=True)
 
 
@@ -215,13 +217,14 @@ def og_obrazek():
     d.line((96, 452, W - 96, 452), fill=LINIA, width=2)
     x = 96
     for plik, nazwa, opis in (("papuga-256.png", "Papuga", "transkrypcje offline"),
-                              ("nutka-256.png", "Nutka", "mp3 z YouTube i Spotify")):
+                              ("nutka-256.png", "Nutka", "mp3 z YouTube i Spotify"),
+                              ("radiomat-256.png", "radioMAT", "radio przy zegarku")):
         ik = Image.open(IMG / plik).convert("RGBA").resize((64, 64), Image.LANCZOS)
         im.alpha_composite(ik, (x, 492))
         d.text((x + 80, 494), nazwa, font=kroj(27, "SemiBold"), fill=TEKST)
         d.text((x + 80, 530), opis, font=kroj(20, "Regular"), fill=SZARY)
         x += 380
-    d.text((W - 96, 526), "matmiccode.github.io", font=kroj(24, "Medium"), fill=ZIELEN, anchor="rm")
+    d.text((W - 96, 600), "matmiccode.github.io", font=kroj(24, "Medium"), fill=ZIELEN, anchor="rm")
     im.convert("RGB").save(IMG / "matcode-og.png", optimize=True)
 
 
