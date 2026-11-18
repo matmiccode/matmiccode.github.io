@@ -71,7 +71,10 @@ nic nie animuje się przy przewijaniu, `prefers-reduced-motion` wyłącza wszyst
 - `footer` — stopka: po lewej „MATCODE · inne programy”, po prawej odnośniki.
 - `.piora` — pasek 4 px z gradientu `--pioro-1..4` (podpis Papugi; inny
   program ustawia własne barwy albo go nie używa).
-- `.odstep`, `.odstep-duzy`, `.muted`, `.small`.
+- `.odstep`, `.odstep-duzy`, `.muted`, `.small`. Odstępy działają też na elementach ramy
+  (`<dl class="cechy odstep-duzy">`, `<ol class="kroki odstep">`), bo stoją w arkuszu za nimi
+  (od 18.11.2026; wcześniej `.cechy` zerowało odstęp). Własny CSS strony ładuje się po ramie,
+  więc jego `margin: 0` nadal wygrywa – tam odstęp dopisz w CSS strony.
 
 ## Co dokłada strona programu
 

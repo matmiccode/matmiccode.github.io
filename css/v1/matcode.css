@@ -82,8 +82,7 @@ h3 { font-size: 1.15rem; letter-spacing: 0; line-height: 1.3; }
 p { margin: 0 0 1em; }
 .muted { color: var(--muted); }
 .small { font-size: 0.9rem; }
-.odstep { margin-top: 28px; }
-.odstep-duzy { margin-top: 36px; }
+/* .odstep i .odstep-duzy stoją niżej, za elementami (muszą wygrać z ich margin: 0). */
 
 /* Nagłówek strony */
 .top { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 22px 0; }
@@ -182,6 +181,11 @@ footer a:hover { color: var(--text); }
   height: 4px; border-radius: 2px;
   background: linear-gradient(90deg, var(--pioro-1, #1c64c4), var(--pioro-2, #2c965c), var(--pioro-3, #f7ba1c), var(--pioro-4, #ce202f));
 }
+
+/* Odstępy — celowo za wszystkimi elementami ramy: .cechy, .kroki, .programy zerują margin,
+   a przy tej samej wadze selektora (jedna klasa) wygrywa reguła stojąca później. Nie przenosić wyżej. */
+.odstep { margin-top: 28px; }
+.odstep-duzy { margin-top: 36px; }
 
 @media (max-width: 760px) {
   section { padding: 40px 0; }
