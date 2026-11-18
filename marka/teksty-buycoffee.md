@@ -43,8 +43,35 @@ Ideas or bugs: github.com/matmiccode. All apps: matmiccode.github.io
 
 ## Podziękowanie po wpłacie
 
-PL: Grazie! Kawa dotarła! Myślę o Tobie ciepło :)
-EN: Grazie! The coffee has arrived! Warm thoughts your way :)
+Ustawione 2026-11-18 (Mateusz: „skonfiguruj fajną wiadomość z podziękowaniem”): szablon „Dziękuję za kawę (PL/EN)”
+w Kreatorze podziękowań (Jednorazowe), przypisany w Ustawieniach wysyłki do zakresu 5–1500 zł (wszystkie kawy).
+Cykliczne i zbiórki celowe – bez własnego szablonu (nie są używane).
+
+Dzięki za kawę! ☕
+Właśnie dotarła i od razu zrobiło mi się cieplej. Każda taka kawa mówi mi, że programy MATCODE naprawdę komuś się
+przydają, i dodaje energii na kolejne.
+
+Masz pomysł albo coś nie działa? Kliknij „Zgłoś problem” w programie albo napisz na github.com/matmiccode. Czytam wszystko.
+
+Wszystkie programy: matmiccode.github.io
+
+Ściskam,
+MATCODE
+
+—
+
+Thanks for the coffee! ☕
+It just arrived and made my day. Every coffee like this tells me MATCODE apps are really useful to someone, and gives
+me energy for the next ones.
+
+Got an idea or found a bug? Click “Report a problem” in the app or write on github.com/matmiccode. I read everything.
+
+All apps: matmiccode.github.io
+
+Cheers,
+MATCODE
+
+(Wcześniej, krótko: „Grazie! Kawa dotarła! Myślę o Tobie ciepło :)” – nigdy nie ustawione, platforma wysyłała swoje domyślne.)
 
 ## Sugerowane kwoty
 
